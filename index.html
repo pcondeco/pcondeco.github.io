@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patricia Condeço Gaião · Finance Automation</title>
+<meta name="description" content="Finance automation, SAP S/4HANA and AI agents for finance. Certified Accountant (OCC), Lisbon, Portugal.">
+<meta property="og:title" content="Patricia Condeço Gaião · Finance Automation">
+<meta property="og:description" content="Reconciliation engines, invoice agents and reporting pipelines built on 16 years of hands-on finance experience.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b0f14">
+<style>
+:root{
+  --bg:#0b0f14; --surface:#121820; --surface-2:#18202b; --border:#243040;
+  --text:#e6edf3; --muted:#9aa7b4; --accent:#3dd6a3; --accent-2:#6aa9ff;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: light){
+  :root{--bg:#f6f8fa;--surface:#fff;--surface-2:#eef2f6;--border:#d6dde5;--text:#16202b;--muted:#566474;--accent:#0a8f68;--accent-2:#1a5fd0}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+nav .logo{font-family:var(--mono);font-weight:600;color:var(--text)}
+nav .logo span{color:var(--accent)}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:.92rem}
+nav ul a{color:var(--muted)}
+nav ul a:hover{color:var(--text);text-decoration:none}
+@media(max-width:600px){nav ul li:not(:last-child){display:none}}
+.hero{padding:84px 0 56px}
+.tag{font-family:var(--mono);font-size:.85rem;color:var(--accent);margin:0 0 14px}
+h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.1;margin:0 0 12px;letter-spacing:-.02em}
+.sub{font-size:clamp(1.05rem,2.6vw,1.3rem);color:var(--muted);max-width:680px;margin:0 0 28px}
+.sub b{color:var(--text);font-weight:600}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;border:1px solid var(--border);color:var(--text);font-weight:600;font-size:.95rem}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#04130d}
+.btn:hover{text-decoration:none;filter:brightness(1.08)}
+.term{margin-top:40px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;font-family:var(--mono);font-size:.85rem}
+.term .bar{display:flex;gap:6px;padding:10px 14px;background:var(--surface-2);border-bottom:1px solid var(--border)}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:var(--border)}
+.term pre{margin:0;padding:16px 18px;overflow-x:auto;color:var(--muted);line-height:1.7}
+.term .p{color:var(--accent)} .term .ok{color:var(--accent)} .term .w{color:#e3b341} .term .t{color:var(--text)}
+section{padding:56px 0;border-top:1px solid var(--border)}
+h2{font-size:1.5rem;margin:0 0 6px;letter-spacing:-.01em}
+h2 .n{font-family:var(--mono);color:var(--accent);font-size:.9rem;margin-right:10px}
+.lead{color:var(--muted);margin:0 0 28px;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card h3{margin:0 0 8px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.card .k{font-family:var(--mono);font-size:.75rem;color:var(--accent);margin-bottom:10px;display:block}
+.stack{display:grid;gap:14px}
+.row{display:grid;grid-template-columns:170px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
+.row:last-child{border-bottom:0}
+.row .a{font-family:var(--mono);font-size:.85rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:.8rem;padding:4px 10px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border)}
+@media(max-width:600px){.row{grid-template-columns:1fr;gap:8px}}
+ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+ul.clean li{padding-left:22px;position:relative;color:var(--muted)}
+ul.clean li::before{content:"›";position:absolute;left:4px;color:var(--accent);font-weight:700}
+ul.clean li b{color:var(--text);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--border);padding:32px 0 48px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.status{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.8rem;color:var(--muted);margin-bottom:18px}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 25%,transparent)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">patricia<span>.</span>fin</a>
+    <ul>
+      <li><a href="#build">Build</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#domain">Domain</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="status">Open to remote B2B projects</div>
+    <p class="tag">// finance × automation × AI</p>
+    <h1>Patricia Condeço Gaião</h1>
+    <p class="sub"><b>Finance automation, SAP S/4HANA and AI agents for finance.</b> I turn manual closing, reconciliation and invoice routines into reliable, auditable pipelines, designed around real controls.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://www.linkedin.com/in/patriciacondeco/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      <a class="btn" href="https://github.com/pcondeco" target="_blank" rel="noopener">GitHub</a>
+    </div>
+
+    <div class="term" aria-hidden="true">
+      <div class="bar"><i></i><i></i><i></i></div>
+<pre># illustrative example with sample data
+<span class="p">$</span> <span class="t">recon run --source ops_ledger --target sap_fi --period 2026-10</span>
+<span class="ok">✔</span> extracted   12,480 documents
+<span class="ok">✔</span> matched     12,311 (98.6%)  auto-posted
+<span class="w">!</span> exceptions  169 routed to review queue
+<span class="ok">✔</span> audit trail written · approver: human-in-the-loop</pre>
+    </div>
+  </div>
+</header>
+
+<section id="build">
+  <div class="wrap">
+    <h2><span class="n">01</span>What I build</h2>
+    <p class="lead">Automation that finance teams can trust: every step is explainable, every exception is visible, and a person approves what matters.</p>
+    <div class="grid">
+      <div class="card"><span class="k">reconciliation</span><h3>Reconciliation engines</h3><p>Automated matching between operational systems and SAP, with exception queues and a full audit trail.</p></div>
+      <div class="card"><span class="k">documents</span><h3>Invoice and credit-note agents</h3><p>Document extraction, validation and posting-ready output, with confidence scoring and review.</p></div>
+      <div class="card"><span class="k">procurement</span><h3>Purchase-order workflows</h3><p>Request, approval and three-way-match platforms that keep procurement and finance in sync.</p></div>
+      <div class="card"><span class="k">reporting</span><h3>Reporting pipelines</h3><p>P&amp;L, balance sheet and KPI packs generated straight from ERP data on a closing calendar.</p></div>
+      <div class="card"><span class="k">ai</span><h3>AI-assisted finance ops</h3><p>LLM agents with human-in-the-loop approval for repetitive analysis, matching and drafting.</p></div>
+      <div class="card"><span class="k">sap</span><h3>SAP S/4HANA finance</h3><p>Two end-to-end implementations: requirements, design, testing, go-live and user adoption.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <h2><span class="n">02</span>Tech and tools</h2>
+    <p class="lead">Finance systems on one side, modern automation on the other.</p>
+    <div class="stack">
+      <div class="row"><div class="a">ERP</div><div class="chips"><span class="chip">SAP S/4HANA</span><span class="chip">FI · GL · AP · AR</span><span class="chip">AA · TR · Tax · BP</span><span class="chip">SAP R/3</span><span class="chip">JD Edwards</span></div></div>
+      <div class="row"><div class="a">Reporting and BI</div><div class="chips"><span class="chip">Oracle Hyperion</span><span class="chip">Longview</span><span class="chip">Advanced Excel</span><span class="chip">Power Query</span></div></div>
+      <div class="row"><div class="a">Automation</div><div class="chips"><span class="chip">LLM agents</span><span class="chip">Claude Code</span><span class="chip">Microsoft 365 workflows</span><span class="chip">SharePoint</span></div></div>
+      <div class="row"><div class="a">Data</div><div class="chips"><span class="chip">Data analysis</span><span class="chip">Data visualization</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="domain">
+  <div class="wrap">
+    <h2><span class="n">03</span>Finance domain</h2>
+    <p class="lead">Sixteen years in finance means the automations start from how the numbers actually close.</p>
+    <div class="two">
+      <ul class="clean">
+        <li><b>Closing and reporting</b> under US GAAP and Portuguese statutory books</li>
+        <li><b>FP&amp;A</b>, budgeting and CAPEX analysis</li>
+        <li><b>Internal controls</b>, SOX and audit coordination</li>
+        <li><b>Treasury</b>, intercompany and tax</li>
+      </ul>
+      <ul class="clean">
+        <li><b>Certified Accountant</b> (OCC)</li>
+        <li><b>CFI</b> Corporate Finance Foundations</li>
+        <li><b>Atlassian</b> Agile Project Management</li>
+        <li><b>Microsoft</b> Data Analysis and Project Management Career Essentials</li>
+        <li><b>INDEG-IUL ISCTE</b> Executive Education</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2><span class="n">04</span>Let's talk</h2>
+    <p class="lead">Open to remote B2B work in SAP finance, finance transformation and automation. Based in Lisbon, Portugal. Languages: Portuguese (native), English (C1), Spanish (B2).</p>
+    <div class="cta">
+      <a class="btn primary" href="https://www.linkedin.com/in/patriciacondeco/" target="_blank" rel="noopener">Message on LinkedIn</a>
+      <a class="btn" href="https://github.com/pcondeco" target="_blank" rel="noopener">github.com/pcondeco</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Patricia Condeço Gaião</span>
+    <span>Lisbon · Portugal</span>
+  </div>
+</footer>
+
+</body>
+</html>
